@@ -1,0 +1,29 @@
+SELECT
+    skills,
+    ROUND(AVG(salary_year_avg), 0) AS average_salary
+
+FROM job_postings_fact
+
+INNER JOIN skills_job_dim ON job_postings_fact.job_id = skills_job_dim.job_id
+INNER JOIN skills_dim ON skills_job_dim.skill_id = skills_dim.skill_id
+
+WHERE
+    job_title_short = 'Data Scientist' AND
+    -- job_schedule_type = 'Full-time' AND
+    -- job_work_from_home = TRUE AND
+    salary_year_avg IS NOT NULL
+
+GROUP BY
+    skills
+
+ORDER BY
+    average_salary DESC
+
+LIMIT 20;
+
+/* Here's a clear breakdown trends that stand out from the top-paying data analysis skills:
+- High pay is tied to platform + workflow expertise, not just “pure” analytics: Tools like Asana, Airtable, Notion, Slack, and Airflow suggest that companies pay a premium for analysts who can embed analytics into business workflows, automation, and collaboration—not just build dashboards.
+- Specialized, hard-to-hire technologies command higher salaries: Skills such as Solidity, Elixir, Haskell, Lua, Neo4j, and Objective-C indicate that niche or less common tech stacks raise compensation due to talent scarcity, even when they’re adjacent to data roles.
+- AI, cloud, and data infrastructure skills are increasingly lucrative: Watson, Hugging Face, DynamoDB, RedHat, CodeCommit, and Airflow reflect demand for analysts who understand AI tooling, cloud-native data systems, and DevOps-adjacent pipelines, blurring the line between data analyst, data engineer, and ML practitioner. 
+
+*/

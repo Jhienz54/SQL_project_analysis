@@ -1,0 +1,42 @@
+[
+  {
+    "skills": "python",
+    "demand_skills": "8294"
+  },
+  {
+    "skills": "sql",
+    "demand_skills": "6216"
+  },
+  {
+    "skills": "r",
+    "demand_skills": "3705"
+  },
+  {
+    "skills": "aws",
+    "demand_skills": "2116"
+  },
+  {
+    "skills": "tableau",
+    "demand_skills": "1931"
+  },
+  {
+    "skills": "sas",
+    "demand_skills": "1770"
+  },
+  {
+    "skills": "spark",
+    "demand_skills": "1688"
+  },
+  {
+    "skills": "pandas",
+    "demand_skills": "1585"
+  },
+  {
+    "skills": "azure",
+    "demand_skills": "1535"
+  },
+  {
+    "skills": "tensorflow",
+    "demand_skills": "1503"
+  }
+]
